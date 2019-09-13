@@ -1,0 +1,27 @@
+{
+  "name": "countapi-js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mlomb/countapi-js#readme",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlomb/countapi-js.git"
+  },
+  "keywords": [
+    "count",
+    "api",
+    "iaas",
+    "countapi.xyz",
+    "visits",
+    "tracking"
+  ],
+  "author": "Martín Lombardo <to@mlomb.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mlomb/countapi-js/issues"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.0.4"
+  }
+}
