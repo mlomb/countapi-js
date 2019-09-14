@@ -18,23 +18,14 @@ const INVALID_NAMESPACE = 'aa';
 function expectMissingKey(actual) {
     return expect(actual).to.eventually.rejectedWith("Missing key");
 }
-function expectMissingKeyOrValue(actual) {
-    return expect(actual).to.eventually.rejectedWith("Missing key or value");
-}
 function expectInvalidKeyPath(actual) {
     return expect(actual).to.eventually.rejectedWith("Key must match");
 }
 function expectInvalidNamespacePath(actual) {
     return expect(actual).to.eventually.rejectedWith("Namespace must match");
 }
-function expectNaN(actual) {
-    return expect(actual).to.eventually.rejectedWith("is NaN");
-}
 function expectPath(namespace, key, actual) {
     return expect(actual).to.eventually.have.property('path').to.be.equals(typeof namespace === "undefined" ? key : `${namespace}/${key}`);
-}
-function expectExistingKey(actual) {
-    return expect(actual).to.eventually.have.property('value').not.null;
 }
 function expectStatusCode(code, actual) {
     return expect(actual).to.eventually.have.property('status').equal(code);
