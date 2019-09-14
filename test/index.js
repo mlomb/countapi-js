@@ -60,13 +60,43 @@ describe('CountAPI', function() {
     });
 
     describe('set', function() {
-        it('non existing', () => expectStatusCode(404, countapi.set('test', uuidv4(), 3)));
+        it('non existing', () => expectStatusCode(404, countapi.set(uuidv4(), 3)));
         it('without enable_reset', () => expectStatusCode(403, countapi.set('d7b97e5f-69a4-4933-8928-b9ee92f6b6ca', 3)));
         it('in default namespace', () => expectStatusCode(200, countapi.set('default', 'c23ce4fa-4b78-4cbb-b53a-da3c2c38bb18', 3)));
     });
     
     describe('update', function() {
-        it('non existing', () => expectStatusCode(404, countapi.set('test', uuidv4(), 3)));
-        // TODO
+        it('non existing', () => expectStatusCode(404, countapi.update(uuidv4(), 3)));
+        it('update out of bounds', () => expectStatusCode(403, countapi.update('test', 100)));
+        it('in default namespace', () => expectStatusCode(200, countapi.update('ce420ebf-369c-4a19-92b1-8b02fb6e72ba', 100)));
+    });
+    
+    describe('hit', function() {
+        it('random key', () => expectStatusCode(200, countapi.hit(uuidv4())));
+        it('in default namespace', () => expectStatusCode(200, countapi.hit('test')));
+    });
+
+    describe('create', function() {
+        it('random', () => expectStatusCode(200, countapi.create()));
+        it('random in namespace', () => expectStatusCode(200, countapi.create({ namespace: 'test' })));
+        it('key', () => expectStatusCode(200, countapi.create({ key: uuidv4() })));
+        it('invalid key', () => expect(countapi.create({ key: INVALID_KEY })).to.eventually.rejectedWith("Malformed Namespace/Key"));
+        it('invalid namespace', () => expect(countapi.create({ namespace: INVALID_NAMESPACE })).to.eventually.rejectedWith("Malformed Namespace/Key"));
+        it('invalid upper bound', () => expect(countapi.create({ update_upperbound: -1 })).to.eventually.rejectedWith("update_upperbound must be positive"));
+        it('invalid lower bound', () => expect(countapi.create({ update_lowerbound:  1 })).to.eventually.rejectedWith("update_lowerbound must be negative"));
+    });
+    
+    describe('info', function() {
+        it('non existing', () => expectStatusCode(404, countapi.info(uuidv4())));
+        it('in default namespace', () => expectStatusCode(200, countapi.info('test')));
+    });
+    
+    describe('stats', function() {
+        it('normal', () => expectStatusCode(200, countapi.stats()));
+    });
+    
+    describe('visits', function() {
+        it('auto', () => expectStatusCode(200, countapi.visits()));
+        it('page', () => expectStatusCode(200, countapi.visits('page')));
     });
 });
