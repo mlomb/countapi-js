@@ -4,6 +4,8 @@ countapi-js
 [![npm](https://img.shields.io/npm/v/countapi-js)](https://www.npmjs.com/package/countapi-js)
 [![Travis (.org)](https://img.shields.io/travis/mlomb/countapi-js)](https://travis-ci.org/mlomb/countapi-js)
 
+![Count API logo](https://countapi.xyz/logo.png "Count API logo")
+
 This is the official promise-based wrapper for [CountAPI](https://countapi.xyz). CountAPI is a free counting service, you can use it to track page hits, and custom events.
 
 Installation
