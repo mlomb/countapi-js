@@ -162,7 +162,7 @@ Examples for those are shown in the [example section](#Example).
 Create a key. All parameters are optional.
 
 | **name**          | **default** | **description**                                                                               |
-|-------------------|-------------|-----------------------------------------------------------------------------------------------|---|---|
+|-------------------|-------------|-----------------------------------------------------------------------------------------------|
 | key               | New UUID    | Name of the key                                                                               |
 | namespace         | default     | Namespace to store the key                                                                    |
 | value             | 0           | The initial value                                                                             |
