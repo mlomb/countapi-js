@@ -1,6 +1,6 @@
 {
   "name": "countapi-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/mlomb/countapi-js#readme",
   "description": "CountAPI is a free counting service",
   "main": "index.js",
