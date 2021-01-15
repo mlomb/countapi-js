@@ -4,6 +4,7 @@
   "homepage": "https://github.com/mlomb/countapi-js#readme",
   "description": "CountAPI is a free counting service",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha"
   },
