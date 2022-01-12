@@ -1,6 +1,8 @@
 countapi-js
 ==========
 
+> ⚠️ This package is no longer mantained by me
+
 [![npm](https://img.shields.io/npm/v/countapi-js)](https://www.npmjs.com/package/countapi-js)
 [![Travis (.org)](https://img.shields.io/travis/mlomb/countapi-js)](https://travis-ci.org/mlomb/countapi-js)
 
